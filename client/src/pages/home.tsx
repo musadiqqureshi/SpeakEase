@@ -57,13 +57,22 @@ export default function HomePage() {
         
         <motion.div 
           variants={fadeIn}
-          className="lg:justify-self-end"
+          className="lg:justify-self-end flex items-center justify-center"
         >
-          <img 
-            src="/assets/speech-therapy.jpg" 
-            alt="Children in speech therapy session" 
-            className="rounded-xl shadow-md w-full max-w-lg mx-auto object-cover h-[400px]" 
-          />
+          <div className="w-full max-w-lg mx-auto bg-gradient-to-r from-primary-100 to-secondary-100 rounded-xl shadow-md p-10 h-[400px] flex flex-col items-center justify-center gap-8">
+            <div className="flex gap-8 justify-center">
+              <div className="text-primary p-6 bg-white rounded-full shadow-lg">
+                <Mic size={64} />
+              </div>
+              <div className="text-secondary-600 p-6 bg-white rounded-full shadow-lg">
+                <Brain size={64} />
+              </div>
+            </div>
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Speech Analysis Made Simple</h3>
+              <p className="text-gray-600 text-lg">Record or upload audio samples for instant AI assessment</p>
+            </div>
+          </div>
         </motion.div>
       </div>
 
