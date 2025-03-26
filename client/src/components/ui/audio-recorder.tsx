@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useAudioRecorder } from "@/hooks/use-audio-recorder";
 import { Waveform } from "./waveform";
 import { Button } from "./button";
-import { Microphone, StopCircle, Play, Pause, RefreshCw } from "lucide-react";
+import { Mic, StopCircle, Play, Pause, RefreshCw } from "lucide-react";
 
 interface AudioRecorderProps {
   onAudioRecorded: (audioBlob: Blob) => void;
@@ -51,7 +51,7 @@ export function AudioRecorder({ onAudioRecorded }: AudioRecorderProps) {
               className="w-16 h-16 rounded-full bg-secondary-500 hover:bg-secondary-600 shadow-lg"
               size="icon"
             >
-              <Microphone size={24} />
+              <Mic size={24} />
             </Button>
           </motion.div>
         ) : isRecording ? (

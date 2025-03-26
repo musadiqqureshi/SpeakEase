@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { ArrowRight, MessageSquare, Book, PaintBrush, RotateCw } from "lucide-react";
+import { ArrowRight, MessageSquare, Book, Paintbrush, RotateCw } from "lucide-react";
 import { PredictionResult } from "@/types/prediction";
 
 const fadeIn = {
@@ -130,7 +130,6 @@ export default function ResultsPage() {
                   <Progress 
                     value={Math.max(0.2, 0.5 - (index * 0.2)) * 100} 
                     className="h-2"
-                    indicatorClassName="bg-secondary-400" 
                   />
                 </div>
               ))}
@@ -171,7 +170,7 @@ export default function ResultsPage() {
               
               <div className="bg-secondary-50 p-5 rounded-lg">
                 <div className="w-12 h-12 bg-secondary-200 text-secondary-700 rounded-full flex items-center justify-center mb-4">
-                  <PaintBrush className="h-5 w-5" />
+                  <Paintbrush className="h-5 w-5" />
                 </div>
                 <h3 className="font-bold text-lg mb-2 text-secondary-800">Draw and Name</h3>
                 <p className="text-gray-700 text-sm">
