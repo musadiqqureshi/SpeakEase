@@ -1,0 +1,139 @@
+Build a complete React.js web application called SpeakEase for early speech disability detection in children. The app should interact with a backend that hosts a pretrained TensorFlow speech classification model (model.h5) capable of detecting speech disorders from audio input.
+
+➡️ Functionality:
+Homepage:
+
+Display an engaging introduction explaining the purpose of the app (early detection of speech disorders in children using AI).
+
+Include a "Get Started" button leading to the upload/record page.
+
+Add animations (use framer-motion) to make UI elements appear smoothly.
+
+Simple navigation bar with Home, Upload, Results, and About.
+
+Audio Input Page (Upload / Record):
+
+Allow the user to either:
+
+Upload an audio file (support .wav, .mp3, .ogg) with a styled drag-and-drop zone.
+
+Or record live audio via browser microphone (use react-mic or the Web Audio API).
+
+Display the waveform while recording and playback option after recording.
+
+Ensure a "Submit for Analysis" button after upload or record.
+
+Show loading spinner (react-loader-spinner or custom spinner with framer-motion) while processing.
+
+Backend Communication:
+
+Send the audio file as multipart/form-data via a POST request to /api/predict endpoint.
+
+Request example:
+
+css
+Copy
+Edit
+POST /api/predict
+body: FormData {
+  file: audio.wav
+}
+Await a JSON response with:
+
+json
+Copy
+Edit
+{
+  "prediction": "Speech Delay",
+  "confidence": 0.87,
+  "top_alternatives": ["Pronunciation Error", "Stuttering"]
+}
+Handle backend errors gracefully with UI alerts and console error logs.
+
+Results Page:
+
+After receiving prediction response, navigate to a results page.
+
+Display prediction in large colorful text.
+
+Use a progress bar or confidence meter (recharts) to show confidence score.
+
+Display alternative predictions with smaller confidence bars.
+
+Suggest activities/exercises below results as static content:
+
+"Try tongue-twister exercises"
+
+"Practice reading aloud using simple sentences"
+
+"Draw and name objects to improve speech association"
+
+Display static recommended care centers with address and dummy contact info (optional future API integration).
+
+Add a “Try Another Test” button that redirects back to the audio upload page.
+
+About Page:
+
+Explain how the AI model works (brief summary from the backend implementation details provided).
+
+Mention datasets used (LibriSpeech, TIMIT, Google Speech Commands).
+
+Link to project documentation or GitHub if available.
+
+➡️ Technology Stack:
+React (use functional components and hooks).
+
+Tailwind CSS for styling with bright, kid-friendly colors, rounded corners, and shadows.
+
+framer-motion for animations.
+
+react-router-dom for routing.
+
+react-mic or native Web Audio API for live recording.
+
+axios for backend API calls.
+
+recharts for visualizing confidence scores.
+
+➡️ UX/UI Requirements:
+Clean, playful design suitable for parents and children.
+
+Large fonts, bright colors, clear CTAs (Call-to-Actions).
+
+Hover effects and subtle animations.
+
+All buttons large enough for mobile touch interaction.
+
+Responsive design: works on desktop, tablet, and mobile.
+
+➡️ Backend Expectations (for AI to assume):
+The backend endpoint /api/predict accepts audio file uploads.
+
+Processes them by extracting MFCC features, passing them through a CNN model, and returns a JSON prediction.
+
+Model trained on speech disorder datasets, optimized for inference.
+
+➡️ Developer Debugging & Extras:
+Add console logs at each stage: recording start, stop, file upload, API request, API response.
+
+Display error messages in both console and UI toast notifications.
+
+Add input validation: disallow files longer than 10MB and only accept valid audio formats.
+
+Optional: store and show recent predictions (localStorage or sessionStorage).
+
+Add Reset button to clear form and results.
+
+➡️ Deliverable:
+Fully functional React app structure with these folders:
+
+/components — Header, Footer, Recorder, FileUploader, ResultsDisplay
+
+/pages — Home, Upload, Results, About
+
+/services — API handler (axios instance)
+
+README with installation instructions.
+
+Placeholder for backend endpoint.
+
