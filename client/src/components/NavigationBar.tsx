@@ -34,17 +34,19 @@ export default function NavigationBar() {
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <a
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                      location === link.href
-                        ? "text-primary"
-                        : "text-gray-600 hover:bg-primary-50"
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                </Link>
+                <div key={link.href}>
+                  <Link href={link.href}>
+                    <span
+                      className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
+                        location === link.href
+                          ? "text-primary"
+                          : "text-gray-600 hover:bg-primary-50"
+                      }`}
+                    >
+                      {link.label}
+                    </span>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
@@ -76,21 +78,22 @@ export default function NavigationBar() {
               <SheetContent>
                 <div className="flex flex-col space-y-4 mt-6">
                   {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <a
-                        className={`px-3 py-2 rounded-md text-base font-medium ${
-                          location === link.href
-                            ? "text-primary bg-primary-50"
-                            : "text-gray-600 hover:bg-primary-50"
-                        }`}
+                    <div key={link.href}>
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
                       >
-                        {link.label}
-                      </a>
-                    </Link>
+                        <span
+                          className={`px-3 py-2 rounded-md text-base font-medium block cursor-pointer ${
+                            location === link.href
+                              ? "text-primary bg-primary-50"
+                              : "text-gray-600 hover:bg-primary-50"
+                          }`}
+                        >
+                          {link.label}
+                        </span>
+                      </Link>
+                    </div>
                   ))}
                 </div>
               </SheetContent>

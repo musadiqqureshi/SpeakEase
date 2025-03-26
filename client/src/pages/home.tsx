@@ -60,7 +60,7 @@ export default function HomePage() {
           className="lg:justify-self-end"
         >
           <img 
-            src="https://images.unsplash.com/photo-1591347887817-173e1058ec7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+            src="/assets/speech-therapy.jpg" 
             alt="Children in speech therapy session" 
             className="rounded-xl shadow-md w-full max-w-lg mx-auto object-cover h-[400px]" 
           />
